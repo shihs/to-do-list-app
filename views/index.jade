@@ -3,14 +3,8 @@ extends layout
 block content
   h1 To do list
   
-  //- ul#menu 
-  //-   li 
-  //-     a(href="#") To Do List
-  //-   li 
-  //-     a(href="#") Completed
-
-  form#add-task
-    input.task(type="text", placeholder="Add a task")
+  form#add-task(method="post" action="/tasks/add")
+    input.task(type="text", placeholder="Add a task", name="task")
     input(type="submit", value="Add")
 
   h2 Tasks
@@ -18,16 +12,16 @@ block content
     ul
       each task in all_tasks
         li= task.tasks
-        input(type="submit", value="Delete")
-        input(type="submit", value="Done")    
+        button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
+        button(type="submit" onclick="CompleteTask(" + task.id + ")") Done
 
   h2 Completed
   block#completed  
     ul
       each task in completed_tasks
         li= task.tasks
-        input(type="submit", value="Delete")
-        input(type="submit", value="Undone")
+        button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
+        button(type="submit" onclick="UncompleteTask(" + task.id + ")") Undone
   
 
 
