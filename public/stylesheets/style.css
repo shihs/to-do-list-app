@@ -11,11 +11,6 @@ body {
 
 #top {
   display: block;
-  /* margin: 10px; */
-  /* width: 55%;
-  margin: auto;
-  padding-bottom: 20px;
-  text-align: center; */
 }
 
 h1 {
@@ -42,8 +37,8 @@ h3 {
 }
 
 #add-task {
-  margin-left: 20px;
-  width: 500px;
+  margin-left: 30px;
+  /* width: 300px; */
 }
 
 #add-task input {
@@ -63,7 +58,6 @@ ul li {
 
 button {
   margin-left: 10px;
-  /* display: inline-block; */
   float: right;
 }
 
@@ -71,10 +65,12 @@ button {
 #completed {
   display: inline-block;
   background-color: rgba(128, 128, 128, 0.3);
-  width: 45%;
+  width: 44%;
   margin-top: 2%;
-  padding: 10px;
-  padding-left: 15px;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #tasks {
