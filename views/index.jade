@@ -1,27 +1,29 @@
 extends layout
 
 block content
-  h1 To do list
-  
-  form#add-task(method="post" action="/tasks/add")
-    input.task(type="text", placeholder="Add a task", name="task")
-    input(type="submit", value="Add")
+  dev#content
+    dev#top
+      h1#title To do list
+      
+      form#add-task(method="post" action="/tasks/add")
+        input.task(type="text", placeholder="Add a task", name="task")
+        input.add(type="submit", value="Add")
 
-  h2 Tasks
-  block#all-tasks
-    ul
-      each task in all_tasks
-        li= task.tasks
-        button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
-        button(type="submit" onclick="CompleteTask(" + task.id + ")") Done
+    dev#tasks
+      h3 Tasks  
+      ul
+        each task in all_tasks
+          li= task.tasks
+            button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
+            button.second(type="submit" onclick="CompleteTask(" + task.id + ")") Done
 
-  h2 Completed
-  block#completed  
-    ul
-      each task in completed_tasks
-        li= task.tasks
-        button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
-        button(type="submit" onclick="UncompleteTask(" + task.id + ")") Undone
+    dev#completed
+      h3 Completed
+      ul
+        each task in completed_tasks
+          li= task.tasks
+            button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
+            button.second(type="submit" onclick="UncompleteTask(" + task.id + ")") Undone
   
 
 
