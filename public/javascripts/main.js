@@ -26,23 +26,3 @@ function actTask(completed, taskId) {
     window.location.reload(); // to refresh
   });
 }
-
-// function UncompleteTask(taskId) {
-//   return $.ajax({
-//     url: `/tasks/uncomplete/${taskId}`,
-//     method: "patch",
-//     timeout: 0,
-
-//     success: () => {
-//       location.reload();
-//     },
-
-//     error: (error) => {
-//       console.error(error);
-//     },
-//   });
-
-//   .then(function (data) {
-//     window.location.reload(); // to refresh
-//   });
-// }
