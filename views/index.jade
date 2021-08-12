@@ -14,16 +14,17 @@ block content
       ul
         each task in all_tasks
           li= task.task
+            button(type="submit" onclick="actTask(1, " + task.id + ")") Done
             button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
-            button.second(type="submit" onclick="CompleteTask(" + task.id + ")") Done
 
     dev#completed
       h3 Completed
       ul
         each task in completed_tasks
           li= task.task
+            button(type="submit" onclick="actTask(0, " + task.id + ")") Undone
             button(type="submit" onclick="deleteTask(" + task.id + ")") Delete
-            button.second(type="submit" onclick="UncompleteTask(" + task.id + ")") Undone
+            
   
 
 

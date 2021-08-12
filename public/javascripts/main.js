@@ -13,9 +13,9 @@ function deleteTask(taskId) {
   });
 }
 
-function CompleteTask(taskId) {
+function actTask(completed, taskId) {
   return $.ajax({
-    url: `/tasks/complete/${taskId}`,
+    url: `/tasks/${completed}/${taskId}`,
     method: "patch",
     timeout: 0,
 
@@ -27,22 +27,22 @@ function CompleteTask(taskId) {
   });
 }
 
-function UncompleteTask(taskId) {
-  return $.ajax({
-    url: `/tasks/uncomplete/${taskId}`,
-    method: "patch",
-    timeout: 0,
+// function UncompleteTask(taskId) {
+//   return $.ajax({
+//     url: `/tasks/uncomplete/${taskId}`,
+//     method: "patch",
+//     timeout: 0,
 
-    success: () => {
-      location.reload();
-    },
+//     success: () => {
+//       location.reload();
+//     },
 
-    error: (error) => {
-      console.error(error);
-    },
-  });
+//     error: (error) => {
+//       console.error(error);
+//     },
+//   });
 
-  //   .then(function (data) {
-  //     window.location.reload(); // to refresh
-  //   });
-}
+//   .then(function (data) {
+//     window.location.reload(); // to refresh
+//   });
+// }
