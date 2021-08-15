@@ -20,7 +20,7 @@ const add_example_tasks = async () => {
   }
 };
 
-add_example_tasks();
+// add_example_tasks();
 
 const get_undo_tasks = function () {
   return Task.findAll({
